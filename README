@@ -1,0 +1,43 @@
+Smart Error
+===========
+
+Ever frustrated by those maintenance pages that don't tell you when the 
+maintenance is done?  Concerned about users that would have come back,
+but forgot to check? 
+
+Smart Error allows a visitor to leave an email address so that you can 
+contact them when the site they were trying to visit is back online.
+
+
+Requirements
+------------
+Software:
+ wkhtmltoimage - http://code.google.com/p/wkhtmltopdf/
+  redis server - http://redis.io/
+
+Gems:
+    redis - https://github.com/ezmobius/redis-rb
+  sinatra - http://www.sinatrarb.com/
+
+
+Usage
+-----
+1. Generate thumbnails using:
+ $ rake thumbnail HOST=<hostname> 
+or 
+ $ rake thumbnail FILE=<file-with-list-of-hosts>
+
+2. Clear database prior to maintenance:
+ $ rake list:clear
+
+3. Run up using passenger/thin/whatever
+
+4. Export list of hosts/emails to contact
+ $ rake list:all
+
+5. Email users
+
+
+Credits:
+--------
+Monitor image: Andy / Molumen - http://www.openclipart.org/detail/6977
